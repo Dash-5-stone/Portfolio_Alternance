@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon Portfolio{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 text-slate-100 min-h-screen">
+    <header class="border-b border-cyan-900/40 bg-slate-950/95 backdrop-blur">
+        <nav class="max-w-5xl mx-auto flex items-center justify-between p-4">
+            <a href="{% url 'home' %}" class="text-xl font-semibold">Mon Portfolio</a>
+            <div class="space-x-6 text-sm md:text-base">
+                <a href="{% url 'home' %}#profil" class="hover:text-cyan-300">Profil</a>
+                <a href="{% url 'home' %}#projets" class="hover:text-cyan-300">Projets</a>
+                <a href="{% url 'home' %}#badges" class="hover:text-cyan-300">Badges</a>
+                <a href="{% url 'home' %}#contact" class="hover:text-cyan-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto p-6">
+        {% if messages %}
+            <div class="space-y-2 mb-6">
+                {% for message in messages %}
+                    <div class="rounded-lg p-3 {% if message.tags == 'success' %}bg-cyan-600/20 text-cyan-200 border border-cyan-500/30{% else %}bg-rose-600/20 text-rose-200 border border-rose-500/30{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="mt-10 border-t border-cyan-900/40">
+        <div class="max-w-5xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm text-slate-300">
+            <p>&copy; 2026 Komlanvi Joseph HOUNKPE. Tous droits réservés.</p>
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="mailto:josephhounkpe852@gmail.com" class="inline-flex items-center gap-2 hover:text-cyan-300 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 6h16v12H4z"></path>
+                        <path d="m4 7 8 6 8-6"></path>
+                    </svg>
+                    Email
+                </a>
+                <a href="https://www.linkedin.com/in/komlanvi-joseph-hounkpe" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-cyan-300 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12ZM8.5 9.75H5.38V19h3.12V9.75Zm4.97 0h-2.99V19h3.12v-4.86c0-2.7 3.5-2.92 3.5 0V19h3.13v-5.96c0-4.64-5.3-4.47-6.76-2.18V9.75Z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+                <a href="#contact" class="inline-flex items-center gap-2 hover:text-cyan-300 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    Contact
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

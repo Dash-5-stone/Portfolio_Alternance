@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Mon Portfolio{% endblock %}
+
+{% block content %}
+<section class="py-10">
+    <h1 class="text-3xl font-bold mb-2">Contact</h1>
+    <p class="text-slate-300 mb-8">Vous avez un projet ou une opportunité ? Envoyez-moi un message.</p>
+
+    <form method="post" class="space-y-4 bg-slate-900 border border-slate-800 rounded-xl p-6">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div>
+                <label for="{{ field.id_for_label }}" class="block mb-1 text-sm text-slate-200">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <p class="text-rose-300 text-sm mt-1">{{ field.errors|striptags }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-5 py-2 rounded-lg shadow-lg shadow-cyan-900/20">
+            Envoyer
+        </button>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Accueil | Mon Portfolio{% endblock %}
+
+{% block content %}
+<section id="profil" class="py-12">
+    <p class="uppercase text-sm tracking-widest text-cyan-300 mb-2">Cybersécurité | Réseaux | Web</p>
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Komlanvi Joseph HOUNKPE</h1>
+    <p class="text-slate-200 max-w-3xl mb-8">
+        Etudiant en cycle d'ingénieur (informatique et réseaux) orienté cybersécurité, je recherche une alternance
+        2026-2028. Je souhaite contribuer à des projets concrets de sécurité informatique et renforcer mes
+        compétences en supervision, protection applicative et infrastructures réseaux.
+    </p>
+    <div class="text-slate-200 mb-8 space-y-1">
+        <p>Dijon (21000) | Permis B</p>
+        <p>josephhounkpe852@gmail.com | 07 45 58 92 41</p>
+    </div>
+    <div class="flex flex-wrap gap-3">
+        <a href="#contact" class="inline-block bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-semibold px-5 py-3 rounded-lg shadow-lg shadow-cyan-900/30">
+            Me contacter
+        </a>
+        <a href="{% static 'docs/CV_Komlanvi_Joseph_HOUNKPE.pdf' %}" download class="inline-block border border-cyan-500 text-cyan-200 hover:bg-cyan-500/10 font-semibold px-5 py-3 rounded-lg transition">
+            Télécharger mon CV
+        </a>
+    </div>
+</section>
+
+<section class="py-10">
+    <h2 class="text-2xl font-semibold mb-4">Compétences clés</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+        <article class="p-5 rounded-xl border border-blue-800 bg-gradient-to-b from-blue-950 to-slate-900 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <h3 class="font-semibold text-lg mb-2">Cybersécurité et réseaux</h3>
+            <p class="text-slate-200">
+                OWASP Top 10, WAF (ModSecurity), analyse de vulnérabilités, tests d'intrusion,
+                TCP/IP, SNMP, VLAN, routing et switching.
+            </p>
+        </article>
+        <article class="p-5 rounded-xl border border-blue-800 bg-gradient-to-b from-blue-950 to-slate-900 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <h3 class="font-semibold text-lg mb-2">Développement</h3>
+            <p class="text-slate-200">
+                Python, SQL, Bash, HTML, CSS, JavaScript, Django, WordPress, Linux, Windows, Canva,
+                Premiere Pro, CapCut.
+            </p>
+        </article>
+    </div>
+</section>
+
+<section id="projets" class="py-10">
+    <h2 class="text-2xl font-semibold mb-4">Projets et expériences</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+        <article class="p-5 rounded-xl border border-blue-800 bg-gradient-to-b from-blue-950 to-slate-900 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <h3 class="font-semibold text-lg mb-2">Stage informatique - GRIMALDI Togo (2025)</h3>
+            <p class="text-slate-200">
+                Mise en place d'une supervision Zabbix (Linux/MySQL, SNMP, Grafana, alerting email).
+                Reduction du temps de detection d'incidents de 80% et gain de productivité de 30%.
+            </p>
+        </article>
+        <article class="p-5 rounded-xl border border-blue-800 bg-gradient-to-b from-blue-950 to-slate-900 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <h3 class="font-semibold text-lg mb-2">Implémentation WAF avec ModSecurity</h3>
+            <p class="text-slate-200">
+                Environnement web vulnérable, simulation SQL Injection/XSS, déploiement des règles OWASP,
+                blocage de 95% des attaques simulées, rapport d'audit sécurité.
+            </p>
+        </article>
+        <article class="p-5 rounded-xl border border-blue-800 bg-gradient-to-b from-blue-950 to-slate-900 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <h3 class="font-semibold text-lg mb-2">Hacking Health Besançon</h3>
+            <p class="text-slate-200">
+                Proposition d'une solution numérique pour optimiser l'accueil des patients et
+                réduire les temps d'attente (objectif: -70%).
+            </p>
+        </article>
+        <article class="p-5 rounded-xl border border-blue-800 bg-gradient-to-b from-blue-950 to-slate-900 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <h3 class="font-semibold text-lg mb-2">Vidéaste et photographe - IAI-Togo (JPO)</h3>
+            <p class="text-slate-200">
+                Couverture photo et vidéo des Journées Portes Ouvertes: tournage, prise de vue et montage
+                de contenus promotionnels pour valoriser l'événement et renforcer sa visibilité.
+            </p>
+        </article>
+        <article class="p-6 rounded-xl border border-cyan-600 bg-gradient-to-r from-cyan-900/60 via-blue-900/60 to-slate-900 shadow-xl shadow-cyan-950/30 transition hover:-translate-y-0.5 hover:border-cyan-300 md:col-span-2 md:max-w-3xl md:mx-auto text-center">
+            <h3 class="font-semibold text-lg mb-2">Projet entrepreneurial cybersécurité</h3>
+            <p class="text-slate-200">
+                Conception d'une offre d'audit et correction des failles pour PME locales,
+                avec business model et étude d'un marché d'environ 52 000 entreprises.
+            </p>
+        </article>
+    </div>
+</section>
+
+<section id="badges" class="py-10">
+    <h2 class="text-2xl font-semibold mb-4">Badges et certifications</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <article class="p-4 text-center rounded-2xl border border-cyan-700 bg-gradient-to-b from-cyan-900/60 to-slate-900 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <img src="{% static 'images/badges/ccna_intro.png' %}" alt="Badge CCNA Introduction aux reseaux" class="w-full max-w-[260px] mx-auto rounded-xl">
+            <h3 class="mt-3 font-semibold">CCNAv7 - Introduction aux réseaux</h3>
+        </article>
+        <article class="p-4 text-center rounded-2xl border border-cyan-700 bg-gradient-to-b from-cyan-900/60 to-slate-900 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <img src="{% static 'images/badges/ccna_srw.png' %}" alt="Badge CCNA Switching Routing Wireless Essentials" class="w-full max-w-[260px] mx-auto rounded-xl">
+            <h3 class="mt-3 font-semibold">CCNA - Switching, Routing and Wireless Essentials</h3>
+        </article>
+        <article class="p-4 text-center rounded-2xl border border-cyan-700 bg-gradient-to-b from-cyan-900/60 to-slate-900 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <img src="{% static 'images/badges/python_essentials.png' %}" alt="Badge Python Essentials 1" class="w-full max-w-[260px] mx-auto rounded-xl">
+            <h3 class="mt-3 font-semibold">Python Essentials 1</h3>
+        </article>
+        <article class="p-4 text-center rounded-2xl border border-cyan-700 bg-gradient-to-b from-cyan-900/60 to-slate-900 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <div class="min-h-[90px] flex items-center justify-center text-center rounded-xl border border-cyan-700 bg-sky-950 text-cyan-200 p-4">SQL Intermediate Certificate</div>
+        </article>
+        <article class="p-4 text-center rounded-2xl border border-cyan-700 bg-gradient-to-b from-cyan-900/60 to-slate-900 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <div class="min-h-[90px] flex items-center justify-center text-center rounded-xl border border-cyan-700 bg-sky-950 text-cyan-200 p-4">NDG Linux Unhatched</div>
+        </article>
+        <article class="p-4 text-center rounded-2xl border border-cyan-700 bg-gradient-to-b from-cyan-900/60 to-slate-900 transition hover:-translate-y-0.5 hover:border-cyan-400">
+            <div class="min-h-[90px] flex items-center justify-center text-center rounded-xl border border-cyan-700 bg-sky-950 text-cyan-200 p-4">Introduction a la cybersécurité</div>
+        </article>
+    </div>
+</section>
+
+<section id="contact" class="py-10">
+    <h2 class="text-2xl font-semibold mb-2">Contact</h2>
+    <p class="text-slate-200 mb-6">Vous avez un projet ou une opportunité ? Envoyez-moi un message.</p>
+    {% if sent %}
+        <div class="mb-4 rounded-lg border border-cyan-500/40 bg-cyan-500/15 text-cyan-200 px-4 py-3">
+            Message envoyé avec succès. Merci, je vous répondrai rapidement.
+        </div>
+    {% endif %}
+
+    <form method="post" class="space-y-4 p-6 rounded-xl border border-blue-800 bg-gradient-to-b from-blue-950 to-slate-900 shadow-lg shadow-black/20">
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+                <label for="{{ field.id_for_label }}" class="block mb-1 text-sm text-cyan-100">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <p class="text-rose-300 text-sm mt-1">{{ field.errors|striptags }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-semibold px-5 py-2 rounded-lg shadow-lg shadow-cyan-900/30">
+            Envoyer
+        </button>
+    </form>
+</section>
+{% endblock %}
