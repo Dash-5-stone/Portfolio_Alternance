@@ -3,8 +3,11 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render
 from django.urls import reverse
+import logging
 
 from .forms import ContactMessageForm
+
+logger = logging.getLogger(__name__)
 
 
 def home(request):
@@ -12,6 +15,8 @@ def home(request):
         form = ContactMessageForm(request.POST)
         if form.is_valid():
             contact_message = form.save()
+            
+            # Essayer d'envoyer l'email, mais ne pas bloquer le formulaire si ça échoue
             try:
                 send_mail(
                     subject=f"Nouveau message portfolio: {contact_message.subject}",
@@ -24,18 +29,23 @@ def home(request):
                     recipient_list=[settings.CONTACT_RECEIVER_EMAIL],
                     fail_silently=False,
                 )
-            except Exception:
-                messages.error(
+                messages.success(
                     request,
-                    "Désolé, une erreur est survenue pendant l'envoi de l'email. Réessayez.",
+                    "Merci ! Votre message a été reçu et un email a été envoyé."
                 )
-                return redirect(f"{reverse('home')}#contact")
-
+            except Exception as e:
+                logger.error(f"Erreur lors de l'envoi d'email: {str(e)}")
+                messages.warning(
+                    request,
+                    "Votre message a été reçu, mais une erreur s'est produite lors de l'envoi de l'email. Nous l'avons noté."
+                )
+            
             # Affiche le message de succès une seule fois (puis le supprime à l'actualisation)
             request.session["contact_sent"] = True
             request.session.modified = True
             return redirect(f"{reverse('home')}#contact")
-        messages.error(request, "Le formulaire contient des erreurs.")
+        else:
+            messages.error(request, "Le formulaire contient des erreurs.")
     else:
         form = ContactMessageForm()
 
